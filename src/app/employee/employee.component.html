@@ -1,1 +1,21 @@
 <p>employee works!</p>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Név</th>
+            <th>Település</th>
+            <th>Fizetés</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees">
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.city }}</td>
+            <td>{{ emp.salary }}</td>
+        </tr>
+    </tbody>
+</table>

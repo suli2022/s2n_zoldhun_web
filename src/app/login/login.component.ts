@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    console.log('login belül')
     let user = this.name;
     let pass = this.pass;
     this.auth.login(user, pass)
