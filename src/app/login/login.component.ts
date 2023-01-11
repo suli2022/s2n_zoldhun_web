@@ -7,7 +7,8 @@ import { AuthService } from '../shared/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  name !: string;
+  pass !: string;
   constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
@@ -15,12 +16,14 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    let user = 'pali';
-    let pass = 'titok';
+    let user = this.name;
+    let pass = this.pass;
     this.auth.login(user, pass)
     .subscribe(res => {
       console.log(res.token);
       console.log(res.name);
+      localStorage.setItem('token', res.token);
+      localStorage.setItem('username', res.name);      
     });
   }
 
